@@ -1,0 +1,26 @@
+.login{
+    background-color: #000;
+    text-align: center;
+    height: 100vh;
+}
+.login img{
+  height: 400px;
+  width: auto;
+}
+.loginBtn{
+    text-align: center;
+    margin-top: 5rem;
+}
+.loginBtn button{
+    padding: 1rem 2rem;
+    border-radius: 35px;
+    border: 2px solid #1db954;
+    background: #1db954;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.loginBtn button a{
+    color: #fff;
+    text-decoration: none;
+}
