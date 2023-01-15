@@ -1,0 +1,28 @@
+.sidebar_options{
+    display: flex;
+    align-items: center;
+    color: gray;
+    height: 40px;
+    cursor: pointer;
+    transition: 200ms color ease-in;
+    gap: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.sidebar_options h2{
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1;
+}
+.sidebar_options p{
+    height: 1rem;
+    margin-bottom: -1rem;
+}
+
+.sidebar_options:hover{
+    color: #fff;
+}
+.sidebar_options svg{
+   width: auto;
+   height: 30px;
+}

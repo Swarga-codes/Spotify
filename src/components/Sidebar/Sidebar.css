@@ -1,0 +1,15 @@
+.sidebar{
+    border: 1px solid black;
+    height: 100vh;
+    flex: 0.16;
+    color: white;
+    background-color: #040404;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.sidebar_title{
+    height: 45px;
+    width: auto;
+    padding: 25px;
+    margin: auto;   
+}

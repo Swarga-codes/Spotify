@@ -8,25 +8,36 @@ import { useDataLayerValue } from './Datalayer';
 const spotify= new SpotifyWebApi();
 function App() {
 
-  const[token,setToken]=useState();
-  const[{},dispatch]=useDataLayerValue();
+  // const[token,setToken]=useState();
+  const[{user,token},dispatch]=useDataLayerValue();
+  // similar to   const[dataLayer,dispatch]=useDataLayerValue(); from which we can use dataLayer.user to refer to user 
   useEffect(()=>{
     const hash=getTokenFromUrl();
     window.location.hash="";
     const _token=hash.access_token;
     if(_token){
-      setToken(_token);
+      dispatch({
+        type:'SET_TOKEN',
+        token:_token
+      });
+      // setToken(_token);
       spotify.setAccessToken(_token);
       spotify.getMe().then((user) => {
-        console.log("The user is: ",user)
+        dispatch({
+          type:'SET_USER',
+          user:user
+        });
+       
       });
     }
     console.log("token",token);
   },[]);
+  console.log("The user is: ",user);
+  console.log("token : ",token);
   return (
     <div className="App">
     {token?
-  <Player/>
+  <Player spotify={spotify}/>
   :
   <Login/>
   }
