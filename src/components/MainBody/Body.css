@@ -6,3 +6,28 @@
 .body h1{
     color: #fff;
 }
+.body_details{
+    display: flex;
+    padding-left: 40px;
+    margin-top: 2rem;
+}
+.body_details img{
+    box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+    height: 15rem;
+    width: 15rem;
+    margin-top: 1rem;
+}
+.body_title{
+margin-left: 2rem;
+margin-top: 2.5rem;
+}
+strong{
+    color: #fff;
+}
+.body_title h1{
+    font-size: 85px;
+}
+.body_title p{
+    color: grey;
+    margin-top: 1.5rem;
+}

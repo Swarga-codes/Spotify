@@ -59,6 +59,7 @@ display: flex;
 .player_play{
     color: #fff;
     transition: all .5s ease-out;
+    width: 10rem;
 }
 .player_play:hover{
    transform: scale(1.5);
@@ -72,4 +73,7 @@ display: flex;
 }
 .volume_down{
     padding-right: 1.5rem;
+}
+.player_volume * .MuiSlider-root{
+    color: green;
 }
