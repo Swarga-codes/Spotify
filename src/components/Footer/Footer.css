@@ -1,6 +1,4 @@
 .footer{
-    /* height: 20vh;
-    position: fixed; */
     position: fixed;
     display: flex;
     justify-content: space-evenly;
@@ -8,4 +6,70 @@ bottom: 0;
     padding: 30px;
     width: 100%;
     background-color: #282828;
+}
+.player_album{
+flex:0.3;
+display: flex;
+}
+
+.player_album img{
+    width: 4rem;
+    height: 3.5rem;
+   
+    padding-right: 20px;
+    /* object-fit: contain; */
+}
+.current_song_details h2{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+.current_song_details h2:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.current_song_details p{
+    color: gray;
+    font-size: 14px;
+}
+.current_song_details p:hover{
+    cursor: pointer;
+    color: #fff;
+    text-decoration: underline;
+
+}
+.player_controls{
+flex: 0.4;
+display: flex;
+}
+.player_volume{
+    flex: 0.15;
+    color: gray;
+}
+.player_shuffle,.player_back,.player_play,.player_next,.player_repeat{
+    color: gray;
+    transform: 200ms color ease-in;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.player_shuffle:hover,.player_back:hover,.player_play:hover,.player_next:hover,.player_repeat:hover{
+    cursor: pointer;
+    color: #fff;
+}
+.player_play{
+    color: #fff;
+    transition: all .5s ease-out;
+}
+.player_play:hover{
+   transform: scale(1.5);
+}
+.playlist_play,.volume_down{
+    margin-top: 0.1rem;
+}
+.playlist_play:hover,.volume_down:hover{
+    cursor: pointer;
+    color: #fff;
+}
+.volume_down{
+    padding-right: 1.5rem;
 }

@@ -4,7 +4,9 @@ import SidebarOptions from "./SidebarOptions";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import LibraryMusicOutlinedIcon from '@mui/icons-material/LibraryMusicOutlined';
+import { useDataLayerValue } from "../../Datalayer";
 function Sidebar() {
+    const[{playlists},dispatch] = useDataLayerValue();
   return (
     <div className="sidebar">   
       <svg viewBox="0 0 1134 340" class="fwTMCeAaUoWDj9WcQbgy" className="sidebar_title">
@@ -21,7 +23,9 @@ function Sidebar() {
       <br />
       <strong className="playlist">PLAYLISTS</strong>
       <hr />
-      
+    {playlists?.items?.map((playlist) => (
+        <SidebarOptions title={playlist.name}/>
+    ))}
       <SidebarOptions title="Hip Hop"/>
       <SidebarOptions title="Rock"/>
       <SidebarOptions title="Jazz"/>
