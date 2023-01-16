@@ -40,6 +40,7 @@ function App() {
         type:'SET_DISCOVER_WEEKLY',
         discover_weekly:response,
       })
+      console.log("response:",response);
     })
     }
     console.log("token",token);

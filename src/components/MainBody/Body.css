@@ -2,6 +2,7 @@
     height: 100vh;
     flex: 0.84;
     background: linear-gradient(rgb(91, 87, 115), rgba(0, 0, 0, 1));
+    overflow-y: overlay;
 }
 .body h1{
     color: #fff;
@@ -30,4 +31,41 @@ strong{
 .body_title p{
     color: grey;
     margin-top: 1.5rem;
+}
+.body_controls {
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+}
+.body_play .MuiSvgIcon-root{
+height: 60px;
+width: auto;
+}
+.body_play{
+    color: #1db954;
+}
+.body_play:hover{
+    cursor: pointer;
+    transition: 200ms all transform ease-in-out;
+    transform: scale(1.08);
+}
+.body_others{
+    padding-left: 10px;
+}
+.body_others .MuiSvgIcon-root{
+    height: 40px;
+    width: auto;
+}
+.body_fav,.body_more{
+    color: gray;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.body_fav:hover,.body_more:hover{
+    cursor: pointer;
+    color: #fff;
+    transition: 200ms all ease-in;
+}
+.body::-webkit-scrollbar{
+    display: none;
 }

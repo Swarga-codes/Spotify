@@ -1,0 +1,31 @@
+.songsList{
+    display: flex;
+    padding: 30px;
+    align-items: center;
+}
+.songsList img{
+    height: 3.5rem;
+    width: auto;
+    object-fit: contain;
+    padding-left: 10px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.songsList_info h1{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+.songsList_info h1:hover{
+    text-decoration: underline;
+}
+.songsList_info p{
+    color: gray;
+    cursor: pointer;
+}
+.songsList_info p:hover{
+    text-decoration: underline;
+    color: #fff;
+}

@@ -6,6 +6,7 @@ bottom: 0;
     padding: 30px;
     width: 100%;
     background-color: #282828;
+    align-items: center;
 }
 .player_album{
 flex:0.3;
@@ -41,6 +42,8 @@ display: flex;
 .player_controls{
 flex: 0.4;
 display: flex;
+margin-left: 5rem;
+align-items: center;
 }
 .player_volume{
     flex: 0.15;
@@ -59,7 +62,6 @@ display: flex;
 .player_play{
     color: #fff;
     transition: all .5s ease-out;
-    width: 10rem;
 }
 .player_play:hover{
    transform: scale(1.5);

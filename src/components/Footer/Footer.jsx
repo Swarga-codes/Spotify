@@ -21,7 +21,7 @@ function Footer() {
     <div className="player_controls">
     <ShuffleOutlinedIcon className='player_shuffle'/>
     <SkipPreviousOutlinedIcon className='player_back'/>
-    <PlayCircleFilledOutlinedIcon className='player_play'/>
+    <PlayCircleFilledOutlinedIcon className='player_play' fontSize='large'/>
     <SkipNextOutlinedIcon className='player_next'/>
     <RepeatOutlinedIcon className='player_repeat'/>
     </div>
