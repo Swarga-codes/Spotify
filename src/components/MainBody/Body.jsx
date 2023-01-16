@@ -5,10 +5,42 @@ import { useDataLayerValue } from '../../Datalayer'
 import PlayCircleFilledOutlinedIcon from '@mui/icons-material/PlayCircleFilledOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
-import { More } from '@mui/icons-material';
+// import { More } from '@mui/icons-material';
 import SongsList from '../SongsList/SongsList';
 function Body({spotify}) {
     const[{discover_weekly},dispatch]=useDataLayerValue();
+    const usePlaylist = (id) => {
+      spotify.play({
+        context_uri: `spotify:playlist:37i9dQZEVXcJZyENOWUFo7`
+      }).then((res)=>{
+        spotify.getMyCurrentPlayingTrack().then((r)=>{
+          dispatch({
+            type:"SET_ITEM",
+            item:r.item,
+          });
+          dispatch({
+            type:"SET_PLAYING",
+            playing:true,
+          });
+        });
+      });
+    };
+    const playSong = (id) =>{
+      spotify.play({
+        uris: [`spotify:track:${id}`],
+      }).then((res)=>{
+        spotify.getMyCurrentPlayingTrack().then((r)=>{
+          dispatch({
+            type:"SET_ITEM",
+            item:r.item,
+          });
+          dispatch({
+            type:"SET_PLAYING",
+            playing:true,
+          });
+        });
+      });
+    };
   return (
     <div className='body'>
     <Header spotify={spotify}/>
@@ -22,7 +54,7 @@ function Body({spotify}) {
     </div>
     <div className="body_controls">
     <div className="body_play">
-    <PlayCircleFilledOutlinedIcon/>
+    <PlayCircleFilledOutlinedIcon onClick={usePlaylist}/>
     </div>
     <div className="body_others">
     <FavoriteBorderOutlinedIcon className='body_fav'/>
@@ -31,7 +63,7 @@ function Body({spotify}) {
     </div>
     <div className="songs_list">
    {discover_weekly?.tracks.items.map((item)=>(
-    <SongsList track={item.track}/>
+    <SongsList track={item.track} playSong={playSong}/>
    ))};
     </div>
     </div>
