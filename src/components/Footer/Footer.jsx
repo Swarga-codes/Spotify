@@ -24,7 +24,7 @@ playing:r.is_playing,
       item:r.item,
     });
     });
-  },[spotify]);
+  },[spotify,token,dispatch]);
   const playOrPause = () =>{
     if(playing){
       spotify.pause();
@@ -70,14 +70,15 @@ playing:r.is_playing,
   return (
     <div className="footer">
     <div className="player_album">
-    <img src={item?.album.images[0].url} alt="no preview" />
-    {item?(
+    <img src={item?.album.images[0].url} alt={item?.name} />
+    {item ?(
       <div className="current_song_details">
       <h2>{item.name}</h2>
       <p>{item.artists.map((artist)=>artist.name).join(", ")}</p>
       </div>
     )
-      :(
+      :
+      (
       <div className="current_song_details">
       <h2>No song is playing</h2>
       <p>.....</p>

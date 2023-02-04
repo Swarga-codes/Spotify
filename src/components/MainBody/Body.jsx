@@ -11,7 +11,7 @@ function Body({spotify}) {
     const[{discover_weekly},dispatch]=useDataLayerValue();
     const usePlaylist = (id) => {
       spotify.play({
-        context_uri: `spotify:playlist:37i9dQZEVXcJZyENOWUFo7`
+        context_uri: `spotify:playlist:7nJri2tel6UcwPCUJ4StDO`
       }).then((res)=>{
         spotify.getMyCurrentPlayingTrack().then((r)=>{
           dispatch({
@@ -48,7 +48,7 @@ function Body({spotify}) {
     <img src={discover_weekly?.images[0]?.url} alt="no preview" />
     <div className="body_title">
     <strong>PLAYLIST</strong>
-    <h1>Discover Weekly</h1>
+    <h1>My Playlist</h1>
     <p>{discover_weekly?.description}</p>
     </div>
     </div>

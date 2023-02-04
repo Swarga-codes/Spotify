@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Login from './components/Login/Login';
 import { getTokenFromUrl } from './spotify-config';
@@ -18,7 +18,7 @@ function App() {
     if(_token){
       dispatch({
         type:'SET_TOKEN',
-        token:_token
+        token:_token,
       });
       // setToken(_token);
       spotify.setAccessToken(_token);
@@ -35,26 +35,39 @@ function App() {
         playlists: playlists,
       });
     });
-    spotify.getPlaylist('37i9dQZEVXcQ9COmYvdajy').then((response)=>{
+    spotify.getPlaylist('7nJri2tel6UcwPCUJ4StDO').then((response)=>{
       dispatch({
         type:'SET_DISCOVER_WEEKLY',
         discover_weekly:response,
       })
       console.log("response:",response);
+    });
+    spotify.getMyTopArtists().then((response) =>
+    dispatch({
+      type: "SET_TOP_ARTISTS",
+      top_artists: response,
     })
+  );
+
+  dispatch({
+    type: "SET_SPOTIFY",
+    spotify: spotify,
+  });
+
     }
     console.log("token",token);
-  },[]);
+  },[token,dispatch]);
   console.log("The user is: ",user);
   console.log("token : ",token);
   return (
     <div className="App">
-    {token?
+   {/* {token?
   <Player spotify={spotify}/>
   :
   <Login/>
-  }
-   
+  }*/}
+  {!token && <Login />}
+  {token && <Player spotify={spotify} />}
     </div>
   );
 }
