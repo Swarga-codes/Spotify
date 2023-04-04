@@ -14,7 +14,7 @@ function Footer({spotify}) {
   const[{token,item,playing},dispatch]=useDataLayerValue();
   useEffect(()=>{
     spotify.getMyCurrentPlaybackState().then((r)=>{
-      console.log("the value of r is:",r);
+      console.log("the value of r is:",r.item);
     dispatch({
 type:"SET_PLAYING",
 playing:r.is_playing,
@@ -70,7 +70,7 @@ playing:r.is_playing,
   return (
     <div className="footer">
     <div className="player_album">
-    <img src={item?.album.images[0].url} alt={item?.name} />
+    {/*<img src={item?.album.images[0].url} alt={item?.name} />*/}
     {item ?(
       <div className="current_song_details">
       <h2>{item.name}</h2>

@@ -11,7 +11,7 @@ function Body({spotify}) {
     const[{discover_weekly},dispatch]=useDataLayerValue();
     const usePlaylist = (id) => {
       spotify.play({
-        context_uri: `spotify:playlist:7nJri2tel6UcwPCUJ4StDO`
+        context_uri: `spotify:playlist:37i9dQZEVXcQ9COmYvdajy`
       }).then((res)=>{
         spotify.getMyCurrentPlayingTrack().then((r)=>{
           dispatch({
@@ -61,11 +61,11 @@ function Body({spotify}) {
     <MoreHorizOutlinedIcon className='body_more'/>
     </div>
     </div>
-    <div className="songs_list">
+   <div className="songs_list">
    {discover_weekly?.tracks.items.map((item)=>(
     <SongsList track={item.track} playSong={playSong}/>
    ))};
-    </div>
+   </div>
     </div>
   )
 }
